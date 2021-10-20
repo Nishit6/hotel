@@ -1,0 +1,59 @@
+<%- include('../partials/header') %> 
+<link rel="stylesheet" href="/guest.css">
+</head>
+<body>
+
+<%- include('../partials/nav') %> 
+
+<h3 class="display-3 headTwo">Rooms</h3>
+
+
+<div class="container">
+<div class="row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6">
+    <p class="new-guest" ><a style="color:white;text-decoration:none" href="/newRoom">Add Room +</a></p>
+  </div>
+  <div class="col-lg-3"></div>
+</div>
+</div>
+
+
+  
+    
+<div class="container"  >
+
+    <div class="row">
+        <% for(let room of newRoom) {%>
+        <div class="col-lg-4"  >
+            <div class="card" style="width: 16rem; margin: 30px auto;">
+                
+                <div class="card-body" >
+                    
+                  <h6 class="card-title display-6" style="padding-top: 5px;"> Room No : <%= room.roomNo %> </h6>
+                 
+                  <h7 class="card-title display-6" style="font-size: 1rem; font-weight: bold;">  Floor : <%= room.floor %> </h7>
+                  <br>
+                  <h7 class="card-title display-6" style="font-size: 1rem; font-weight: bold;">  Room Type : <%= room.roomType %> </h7>
+                  <br>
+                  <br>
+                  <p class="card-text">  Booking Date : <%= room.bookingDate %></p>
+                  <a href="/roomDetails/<%= room.id %> " class="btn btn-outline-info" style="display: flex;justify-content: space-evenly;text-align: end;">More Info</a>
+                  
+                </div>
+              </div>
+       
+            
+          </div>
+          <% } %> 
+        </div>
+    </div>
+
+</div>
+
+ 
+
+
+
+
+  <%- include('../partials/footer') %>

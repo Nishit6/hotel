@@ -1,0 +1,161 @@
+<%- include("../partials/header") %> 
+<link rel="stylesheet" href="/detail.css">
+</head>
+<body>
+<%- include("../partials/nav") %> 
+
+<!-- <link rel="stylesheet" href="/css/userprofile.css"> -->
+
+<div id="userCard" class="container">
+  
+        <div class="main">
+      
+            <div class="row">
+                
+ <div class="col-lg-2"></div>
+                <div class="col-md-8 mt-5">
+                    <div class="card mb-3 content">
+                        <h1 class="m-3 pt-3">More Information</h1>
+                      
+                        <div class="card-body">
+                           
+                            <hr>
+                            <div class="row">
+                                <div  class="col-md-3">
+                                    <h5>Full name</h5>
+                                </div>
+                                <div id="h5" class="col-md-9 text-secondary">
+                                    <%= item.FirstName +" "+item.LastName  %>
+                                </div>
+                            </div>
+                            
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>City/Country</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                    <%= item.city %> / <%= item.country %> 
+                                </div>
+                               
+                            </div>
+                        
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Mobile number</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                    <%= item.phone %>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Age</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                    <%= item.age %>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Gender</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                    <%= item.gender %>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Address</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                    <%= item.address  %>
+                                </div>
+                                
+                            </div>
+                            <hr>
+                           
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Room Assigned</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                    <%= item.roomNo  %>
+                                </div>
+                                
+                            </div>
+                            <hr>
+                         
+
+                        
+                           
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Room Type</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                    <%= item.roomType %>
+                                </div>
+                                
+                            </div>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Booking Date</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                    <%= item.bookingDate %>
+                                </div>
+                                
+                            </div>
+                            <hr>
+                          
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Floor Assigned</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                    <%= item.floor %>
+                                </div>
+                                
+                            </div>
+                            <hr>
+
+                          
+
+                         
+
+                            <form action="/guest/<%= item._id %>/edit" class="mb-3" method="get">
+                                <button style="width: 100%;" type="submit" class="btn btn-outline-warning">Edit</button>
+                            </form>
+    
+                            <form class=" mb-3"novalidate action="/guest/<%= item.id %>?_method=DELETE " method="POST">
+                                <button style="width: 100%;" type="submit" class="btn btn-outline-danger">Delete</button>
+                            </form>
+
+                            <div class="col-lg-2"></div>
+                        </div>
+                        
+                        </div>
+                       
+                        
+                    </div>
+                    
+               
+
+                    
+                   
+
+                   
+                   
+<%- include("../partials/footer") %> 
