@@ -41,7 +41,7 @@ app.use(methodOverride('_method'));
 
 app.use(userRoute);
 
-seedDB();
+// seedDB();
 
 
 
