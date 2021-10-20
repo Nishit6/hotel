@@ -1,3 +1,8 @@
+if(process.env.Node_ENV!== "production"){
+    require('dotenv').config();
+}
+
+
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -45,7 +50,7 @@ app.get('/',(req,res)=>{
     res.render('home')
 })
 
-app.listen(3000,(req,res)=>{
+app.listen(process.env.PORT || 3000,(req,res)=>{
 
     console.log("Server Running at Port 3000..")
 
