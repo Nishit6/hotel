@@ -14,7 +14,7 @@ const Employee = require('./models/employee');
 const seedDB = require('./seed');
 
 
-mongoose.connect('mongodb://localhost:27017/hotel', {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.DB_URL , {useNewUrlParser: true, useUnifiedTopology: true})
 .then(()=>{
     console.log("DB CONNECTED");
 })
