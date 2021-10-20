@@ -8,13 +8,53 @@ const roomArray = [
 
     {
         
-        roomNo:01,
-        bookingDate:13-10-2021,
+      FirstName:'Nishit ',
+      LastName : 'Gaur',
+      age:21,
+      gender:male,
+      phone:7721869369,
+      address:'New Govind Nagar',
+      city:'ajmer',
+      country:'India',
+      bookingDate:10-10-2021,
+      floor:02,
+      roomType:'AC',
+      roomNo:01
+
+        
+    }, {
+        
+        FirstName:'Nishit ',
+        LastName : 'Gaur',
+        age:21,
+        gender:male,
+        phone:7721869369,
+        address:'New Govind Nagar',
+        city:'ajmer',
+        country:'India',
+        bookingDate:10-10-2021,
+        floor:02,
         roomType:'AC',
-        floor:02
+        roomNo:01
+  
+          
+      }, {
         
-        
-    }
+        FirstName:'Nishit ',
+        LastName : 'Gaur',
+        age:21,
+        gender:male,
+        phone:7721869369,
+        address:'New Govind Nagar',
+        city:'ajmer',
+        country:'India',
+        bookingDate:10-10-2021,
+        floor:02,
+        roomType:'AC',
+        roomNo:01
+  
+          
+      }
   
     
 ]
