@@ -91,7 +91,7 @@ router.delete('/guest/:id',isAuthorized,async(req,res)=>{
 
     try{
         await Guest.findByIdAndDelete(req.params.id);
-       
+        req.flash('success','Guest Deleted Successfully');
         res.redirect('/showGuest');
      
     }catch (error) {
