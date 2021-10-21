@@ -3,7 +3,10 @@ const router = express.Router();
 const Guest = require('../models/guest')
 
 
+router.get('/',(req,res)=>{
 
+    res.render('home')
+})
 
 router.get('/showGuest',async(req,res)=>{
 

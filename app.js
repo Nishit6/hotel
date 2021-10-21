@@ -10,7 +10,7 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const Guest = require('./models/guest');
 
-const Employee = require('./models/employee');
+
 const seedDB = require('./seed');
 
 
@@ -45,10 +45,7 @@ app.use(userRoute);
 
 
 
-app.get('/',(req,res)=>{
 
-    res.render('home')
-})
 
 app.listen(process.env.PORT || 3000,(req,res)=>{
 
