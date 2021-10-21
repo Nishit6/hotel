@@ -1,0 +1,75 @@
+  
+   <%- include("../partials/header") %> 
+   <link rel="stylesheet" href="/form.css">
+  </head>
+  <body>
+   <%- include("../partials/nav") %> 
+
+
+
+
+
+<%- include("../partials/flash") %> 
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-8">
+        <form  class="validate-form" novalidate method="POST" action="/login"  style="margin-top: 3rem;margin-bottom: 150px;">
+
+          <h2 style="color: #ffd000;">Login</h2>
+          <div class="mb-3" >
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Username" name="username" required>
+            <div id="emailHelp" class="form-text">Enter your username here</div>
+            <div class="valid-feedback">
+              Looks good!!
+            </div>
+            <div class="invalid-feedback">
+              Please add a Username Name.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" class="form-control" id="password" placeholder="password" name="password" required>
+            <div id="emailHelp" class="form-text">Enter your password here</div>
+            <div class="valid-feedback">
+              Looks good!!
+            </div>
+            <div class="invalid-feedback">
+              Please enter password.
+            </div>
+          </div>
+       
+          <button type="submit" class="btn btn-success">Login</button>
+          <br>
+          <br>
+          <a style="color: rgb(178, 197, 1);" href="/register"> Not a User? Singup</a>
+          <br>
+          <br>
+  
+         
+          <!-- <br>
+          <br>
+         <button><a href="/google">google</a></button>  -->
+        </form>
+      
+  
+  
+      </div>
+      <div class="col-lg-2"></div>
+    </div>
+  </div>
+
+
+
+   
+
+  
+
+
+
+
+
+   <%- include("../partials/footer") %> 

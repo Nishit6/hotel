@@ -5,12 +5,13 @@
 
 <%- include('../partials/nav') %> 
 
-
+<%- include("../partials/flash") %> 
 
 <h3 class="display-3 headTwo">Guests</h3>
 
 
 <div class="container">
+
 <div class="row">
   <div class="col-lg-3"></div>
   <div class="col-lg-6">
@@ -28,15 +29,13 @@
     <div class="row">
         <% for(let item of guest) {%>
         <div class="col-lg-4"  >
-            <div class="card" style="width: 15rem; margin: 30px auto;">
+            <div class="card" style="width: 15rem; margin: 30px auto;box-shadow: 2px 2px 4px 4px gray;">
                 
                 <div class="card-body" >
                     <img src="https://bellfund.ca/wp-content/uploads/2018/03/demo-user.jpg" class="card-img-top" style="height: 150px;width: 200px;border-radius: 50%;"> 
-                  <h6 class="card-title" style="padding-top: 5px;"><%= item.FirstName +" "+ item.LastName %> </h6>
+                  <h6 class="card-title text-center" style="padding-top: 5px;"><%= item.FirstName +" "+ item.LastName %> </h6>
                  
-                  <h7 class="card-title display-6" style="font-size: 1rem; font-weight: bold;"> <%= item.age %> </h7>
-                  <br>
-                  <p class="card-text"><%= item.address.substring(0,30) %>... </p>
+                
                   <a href="/details/<%= item._id %>" class="btn btn-outline-info" style="display: flex;justify-content: space-evenly;text-align: end;">More Info</a>
                   
                 </div>

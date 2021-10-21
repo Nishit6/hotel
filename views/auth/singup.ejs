@@ -1,0 +1,142 @@
+  
+   <%- include("../partials/header") %> 
+   <link rel="stylesheet" href="/form.css">
+  </head>
+  <body>
+   <%- include("../partials/nav") %> 
+
+<%- include("../partials/flash") %> 
+
+ <div class="container">
+    <div class="row">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-8">
+        <form  class="validate-form" novalidate method="POST" action="/register" style="margin-top: 3rem;" >
+
+          <h2 style="color: #ffd000;">Sing up</h2>
+          <div class="mb-3" >
+            <label for="FirstName" class="form-label">FirstName:</label>
+            <input type="text" class="form-control" id="firstname" aria-describedby="emailHelp" placeholder="FirstName" name="firstname" required>
+            <div id="emailHelp" class="form-text">Enter your FirstName here</div>
+            <div class="valid-feedback">
+              Looks good!!
+            </div>
+            <div class="invalid-feedback">
+              Please add a FirstName .
+            </div>
+          </div>
+  
+          <div class="mb-3" >
+          <label for="LastName" class="form-label">LastName:</label>
+          <input type="text" class="form-control" id="lastname" aria-describedby="emailHelp" placeholder="LastName" name="lastname" required>
+          <div id="emailHelp" class="form-text">Enter your LastName here</div>
+          <div class="valid-feedback">
+            Looks good!!
+          </div>
+          <div class="invalid-feedback">
+            Please add a LastName .
+          </div>
+        </div>
+       
+        
+        <div class="mb-3" >
+          <label for="username" class="form-label">Username:</label>
+          <input type="text" class="form-control" id="username"  placeholder="username" name="username" required>
+          <div id="emailHelp" class="form-text">Enter your username here</div>
+          <div class="valid-feedback">
+            Looks good!!
+          </div>
+          <div class="invalid-feedback">
+            Please choose a username.
+          </div>
+        </div>
+       
+          <div class="mb-3" >
+              <label for="email" class="form-label">Email:</label>
+              <input type="email" class="form-control" id="email"  placeholder="Email" name="email" required>
+              <div id="emailHelp" class="form-text">Enter your email here</div>
+              <div class="valid-feedback">
+                Looks good!!
+              </div>
+              <div class="invalid-feedback">
+                Please choose a email.
+              </div>
+            </div>
+  
+          <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" class="form-control" id="password" placeholder="password" name="password" required>
+            <div id="emailHelp" class="form-text">Enter your Password here</div>
+            <div class="valid-feedback">
+              Looks good!!
+            </div>
+            <div class="invalid-feedback">
+              Please enter password.
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone:</label>
+            <input type="number" class="form-control" id="phone" placeholder="phone" name="phone" required>
+            <div id="emailHelp" class="form-text">Enter your Mobile Number here</div>
+            <div class="valid-feedback">
+              Looks good!!
+            </div>
+            <div class="invalid-feedback">
+              Please enter Mobile Number.
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            
+            <textarea class="form-control" id="address" rows="2"name="address" required></textarea >
+              <div id="emailHelp" class="form-text">Enter your Address here</div>
+              <div class="valid-feedback">
+                Looks good!!
+              </div>
+              <div class="invalid-feedback">
+                Please add address.
+              </div>
+  
+          </div>
+
+          <div class="col-md-6">
+            <label for="role" class="form-label">You're A </label>
+            <select class="form-select inp" aria-label="Default select example" name="role" required>
+                <option selected>Choose ...</option>
+              
+                <option value="Manager">Manager</option>
+            </select>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please Choose one.
+            </div>
+        </div>
+      
+        <br>
+          <a style="color: rgb(178, 197, 1);" href="/singUp">don't have an account?SingUp</a>
+          <br>
+          <br>
+          <button type="submit" class="btn btn-success">Sing Up</button>
+          
+  
+        </form>
+      
+      </div>
+      <div class="col-lg-2"></div>
+    </div>
+  </div>
+ 
+
+
+
+  
+
+
+
+
+
+   <%- include("../partials/footer") %> 

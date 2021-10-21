@@ -6,11 +6,15 @@
     text-align: center;
     color: white;
 }
+
+.new-guest:hover{
+   transform: scale(1.1);
+}
 body{
     
 }
 
 .headTwo{
-    margin-top: 3rem;
+  
     border-bottom: 1px solid rgb(224, 217, 217);
 }

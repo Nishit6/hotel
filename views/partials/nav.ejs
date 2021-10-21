@@ -1,20 +1,59 @@
+<style>
+  .fontnav{
+    font-family: 'Noto Sans', sans-serif;
+  }
+  #nav-a:hover{
+    background-color: rgba(160, 170, 170, 0.301);
+  }
+  
+</style>
 
 
-<nav class="navbar  fixed-top navbar-expand-lg navbar-light "  style="background-color: #bc6c25;">
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #ca6702;">
+
+
     <div class="container-fluid">
+        <strong><a class="navbar-brand" href="#" style="color: rgb(248, 244, 3);">Hotel-app</a></strong>  
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="#">Hotel-app</a>
+      <div class="collapse navbar-collapse fontnav" id="navbarTogglerDemo01">
+       
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a id="nav-a" class="nav-link active" aria-current="page" href="/" style="color: white;">Home</a>
+          </li>
+      
+          <li class="nav-item">
+            <a class="nav-link" href="/showGuest" style="color: white;">Guests</a>
           </li>
           
         </ul>
-        
+        <!-- <form class="d-flex"style="margin-right: 300px;">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> -->
+        <div class="navbar-nav ml-auto">
+
+            <% if(!currentUser) {%> 
+            <a href="/login"class="nav-link active" style="color: white;">Login</a>
+           
+            
+              <%}else{ %> 
+                
+
+                
+
+          
+            
+     
+                <a  style="color: white;text-decoration: none;" href="/logout">Logout   <%- include("../partials/logout") %>  </a>
+          <% } %> 
+          </div>
       </div>
     </div>
   </nav>
-

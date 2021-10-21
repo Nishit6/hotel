@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Guest = require('../models/guest')
+const Guest = require('../models/guest');
+const {isAuthorized} = require('../middlewares/authorized')
 
 
 router.get('/',(req,res)=>{
@@ -8,14 +9,21 @@ router.get('/',(req,res)=>{
     res.render('home')
 })
 
-router.get('/showGuest',async(req,res)=>{
+router.get('/showGuest',isAuthorized,async(req,res)=>{
 
-    const guest = await Guest.find({});
+    try{
+        const guest = await Guest.find({});
 
-    res.render('guests/guest',{guest})
+        res.render('guests/guest',{guest})
+    }catch (error) {
+        console.log("error");
+        req.flash('error','Invalid Operation');
+        res.redirect('/error');
+    } 
+
 })
 
-router.get('/newGuest',async(req,res)=>{
+router.get('/newGuest',isAuthorized,async(req,res)=>{
 
    
 
@@ -23,27 +31,29 @@ router.get('/newGuest',async(req,res)=>{
 })
 
 
-router.get('/newRoom',(req,res)=>{
+
+
+
+
+
+router.post('/newGuest',isAuthorized,async(req,res)=>{
+
+    try{
+        await Guest.create(req.body);
+        req.flash('success','Guest Created Successfully');
+        res.redirect('/showGuest');
+    
+    }catch (error) {
+        console.log("error");
+        req.flash('error','Invalid Operation');
+        res.redirect('/error');
+       }
+        
 
     
-
-    res.render('rooms/newRoom');
-
 })
 
-
-
-
-
-router.post('/newGuest',async(req,res)=>{
-
-    await Guest.create(req.body);
-
-    res.redirect('/showGuest');
-
-})
-
-router.get('/details/:id',async(req,res)=>{
+router.get('/details/:id',isAuthorized,async(req,res)=>{
 
    const item = await Guest.findById(req.params.id);
 
@@ -52,7 +62,7 @@ router.get('/details/:id',async(req,res)=>{
 
 
 
-router.get('/guest/:id/edit',async(req,res)=>{
+router.get('/guest/:id/edit',isAuthorized,async(req,res)=>{
 
     const guest = await Guest.findById(req.params.id);
        
@@ -60,31 +70,44 @@ router.get('/guest/:id/edit',async(req,res)=>{
      
 })
 
-router.patch('/guest/:id',async(req,res)=>{
+router.patch('/guest/:id',isAuthorized,async(req,res)=>{
 
-    const guest = await Guest.findByIdAndUpdate(req.params.id,req.body);
+    try{
+        const guest = await Guest.findByIdAndUpdate(req.params.id,req.body);
+        req.flash('success','Guest Updated Successfully');
+        res.redirect('/showGuest');
+     
+    }catch (error) {
+        console.log("error");
+        req.flash('error','Invalid Operation');
+        res.redirect('/error');
+       }
+        
+
+    
+})
+
+router.delete('/guest/:id',isAuthorized,async(req,res)=>{
+
+    try{
+        await Guest.findByIdAndDelete(req.params.id);
        
         res.redirect('/showGuest');
      
+    }catch (error) {
+        console.log("error");
+        req.flash('error','Invalid Operation');
+        res.redirect('/error');
+       }
+
+
 })
 
-router.delete('/guest/:id',async(req,res)=>{
-
-   await Guest.findByIdAndDelete(req.params.id);
-       
-        res.redirect('/showGuest');
-     
-})
 
 
 
 
 
-router.post('/details/:id/rooms/:id',async(req,res)=>{
-
-  res.send(req.params)
-  
-})
 
 
 
