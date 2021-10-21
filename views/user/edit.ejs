@@ -1,0 +1,85 @@
+<%- include("../partials/header") %> 
+<link rel="stylesheet" href="/form.css">
+</head>
+<body>
+<%- include("../partials/nav") %> 
+
+
+<h5 class="display-5">Edit Details</h5>
+<hr>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <form class="validate-form" novalidate action="/user/<%= currentUser._id %>?_method=PATCH " method="POST" >
+   
+        <div class="mb-3" >
+          <label for="name" class="form-label">First Name:</label>
+          <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter Text" name="firstName" value="<%= currentUser.firstName %> " required>
+          <div id="emailHelp" class="form-text"></div>
+          <div class="valid-feedback">
+            Looks good!!
+          </div>
+          <div class="invalid-feedback">
+            Please choose a valid Name.
+          </div>
+        </div>
+   
+        <div class="mb-3" >
+           <label for="name" class="form-label">Last Name:</label>
+           <input type="text" class="form-control" id="name" aria-describedby="emailHelp"  name="lastName" value="<%= currentUser.lastName %> " required>
+           <div id="emailHelp" class="form-text"></div>
+           <div class="valid-feedback">
+             Looks good!!
+           </div>
+           <div class="invalid-feedback">
+             Please choose a valid Name.
+           </div>
+         </div>
+   
+        <div class="mb-3" >
+            <label for="mobile" class="form-label">Mobile:</label>
+            <input type="text" class="form-control" id="mobile"   name="phone" value="<%= currentUser.phone %> " required>
+            <div id="emailHelp" class="form-text">Enter your mobile number here</div>
+            <div class="valid-feedback">
+              Looks good!!
+            </div>
+            <div class="invalid-feedback">
+              Please choose a input.
+            </div>
+          </div>
+       
+        
+   
+        <div class="mb-3">
+            <label for="desc" class="form-label">Address:</label>
+            <textarea class="form-control" id="desc" rows="3"name="address" required><%= currentUser.address %>  </textarea >
+              <div class="valid-feedback">
+                Looks good!!
+              </div>
+              <div class="invalid-feedback">
+                Please add an address.
+              </div>
+          </div>
+        <button type="submit" class="btn btn-success">SAVE</button>
+      </form>
+   
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+ 
+  
+ 
+
+
+
+
+
+
+
+
+
+<%- include("../partials/footer") %> 

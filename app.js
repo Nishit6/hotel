@@ -31,7 +31,8 @@ mongoose.connect(process.env.DB_URL , {useNewUrlParser: true, useUnifiedTopology
 // routes
 
 const userRoute = require('./routes/userRoute');
-const authRoute = require('./routes/authRoute')
+const authRoute = require('./routes/authRoute');
+const managerRoute = require('./routes/user')
 
 
 
@@ -87,6 +88,7 @@ app.use((req,res,next)=>{
 
 app.use(userRoute);
 app.use(authRoute);
+app.use(managerRoute);
 
 // seedDB();
 
